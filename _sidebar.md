@@ -1,8 +1,11 @@
 
 <!-- _sidebar.md -->
 
-* Typora+Docsify使用指南
-  * [Docsify使用指南](/ProjectDocs/Docsify使用指南.md) <!--注意这里是相对路径-->
-  * [Typora+Docsify快速入门](/ProjectDocs/Typora+Docsify快速入门.md)
-* Docsify部署
-  * [Docsify部署教程](/ProjectDocs/Docsify部署教程.md)
+* [首页](/README)
+
+* 神经网络
+    * [第一章](neural_network/chart_1/readme)
+    * [第二章](neural_network/chart_2/readme)
+    * [第三章](neural_network/chart_3/readme)
+    * [第四章](neural_network/chart_4/readme)
+    

@@ -1,4 +1,2 @@
+# 一些课程的知识点总结
 
-# Headline
-
-> An awesome project.
