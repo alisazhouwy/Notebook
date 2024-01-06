@@ -37,14 +37,15 @@ $$
 
 改进：  
 1. Relu 代替 Sigmoid
-2. 使用dropout(丢掉一些神经元来提升模型的泛化能力防止过拟合，卷积神经网络中的神经元相当于提取某种特定特征的卷积核)
+2. 使用dropout(每次随机抑制（遗忘）一些神经元，使得提取到的特征更具有通用性和普遍性，从而来提升模型的泛化能力防止过拟合，卷积神经网络中的神经元相当于提取某种特定特征的卷积核)
 3. 提出了LRN(局部响应)
 
 ## VGG & GoogleNet
 VGG是用更小的卷积，搭建更深的网络  
 
 GoogleNet 改进：  
-1. 引入Inception结构
+1. 引入Inception结构  
+inception的作用：使用不同大小的卷积提取不同尺度的特征，然后把这些特征拼接起来保留了不同尺度的信息。
 ![png](img/Inception.png)  
 ![png](img/Inception1.png)
 由于第一种结构会增加参数量，因此引入1*1卷积先对特征图降维再进行卷积操作从而降低参数量。  
@@ -53,12 +54,14 @@ GoogleNet 改进：
     - 提取特征
     - 降维
      > 为什么右边的1*1卷积在max pooling之后：MaxPooling操作通常用于减小空间分辨率，但可能导致信息损失。在MaxPooling之后使用1x1卷积可以在降低空间分辨率的同时，保持通道数并引入非线性映射，以提高网络的表达能力。
-3. Fusion
+3. Fusion  
+输出多个结果来决策最终结果
+
 
 ## ResNet
 
 1. residual(残差)  
-主要减轻梯度消失、梯度爆炸和退化问题（当网络很深时，会遗忘低阶特征，效果会变得很差）
+主要减轻梯度消失、梯度爆炸和退化问题（当网络很深时，会遗忘低阶特征，效果会变得很差，退化现象：浅层网络都比深层网络表现得好）
 ![png](img/residual.png)
 是一种加和操作，而不是concat操作
 
@@ -72,7 +75,8 @@ GoogleNet 改进：
 2. Dense block & Transition
 ![png](img/denseblock.png)
 ![png](img/dense.png)
-DenseNet中采用pre-activation结构的主要作用是通过提前进行归一化和激活操作，缓解梯度消失问题，促进信息流动，支持更深的网络结构，并更加高效地利用参数。
+DenseNet中采用pre-activation结构的主要作用是通过提前进行归一化和激活操作，缓解梯度消失问题，促进信息流动，支持更深的网络结构，并更加高效地利用参数。  
+为了降低参数量，在Dense block中采用1*1卷积降低通道数；在Dense block之间使用transition（1\*1conv+2*2polling）来降低特征图大小。
 3. bottleneck
 ![png](img/bottleneck.png)
 4. transition

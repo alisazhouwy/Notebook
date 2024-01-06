@@ -8,4 +8,5 @@
     * [第二章](neural_network/chart_2/readme)
     * [第三章](neural_network/chart_3/readme)
     * [第四章](neural_network/chart_4/readme)
+    * [第五章](neural_network/chart_5/readme)
     
